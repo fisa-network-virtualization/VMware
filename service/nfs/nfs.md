@@ -1,6 +1,6 @@
-# NFS(Network File System) 도입 및 구성 전략
+# NFS 기반 Web Server 동기화
 
-데이터의 효율적인 관리와 고가용성 확보를 위해 **NFS**(Network File System)를 도입하였다.
+다중 웹 서버 환경에서 웹 콘텐츠의 일관성을 유지하고 효율적으로 관리하기 위해 **NFS**(Network File System)를 활용한 공유 저장소 체계를 구축하였다.
 
 ## 1. 목적
 
