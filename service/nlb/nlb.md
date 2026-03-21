@@ -20,8 +20,9 @@ NFS 미션에서 각 웹 서버는 Shared Storage(NFS)를 이용하여 동일한
 ## 2. 구성도 / 개념
 
 ### 2-1. 전체 구조
+<img width="1127" height="407" alt="NLB_test" src="https://github.com/user-attachments/assets/4a187f1d-ffad-46bd-9b33-f57f21a8eb5a" />
 
-![로드밸런서 구조도](./images/nlb-architecture.png)
+
 
 ### 2-2. 구성 개념
 
@@ -125,7 +126,7 @@ One-Arm Proxy 구조로 동작한다.
 
 ### 3-3. 로드밸런서 VM 네트워크 설정
 #### 1) IP 할당
-![로드밸런서 구조도](./images/nlb-architecture.png)
+<img width="566" height="522" alt="image" src="https://github.com/user-attachments/assets/a6fd9160-e6f1-47a7-ac88-53e5cd2f4259" />
 
 ```bash
 sudo nmtui
@@ -177,7 +178,7 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 -keyout /etc/nginx/nginx-selfsigned.key \
 -out /etc/nginx/nginx-selfsigned.crt
 ```
-![로드밸런서 구조도](./images/nlb-architecture.png)
+<img width="1479" height="414" alt="image (1)" src="https://github.com/user-attachments/assets/50efbaaa-d045-492e-9465-c1b16ba04c8d" />
 
 > 명령어 실행 후 표시되는 입력 항목은 기본값으로 진행 가능
 
@@ -251,7 +252,7 @@ sudo setsebool -P httpd_can_network_connect 1
 ```
 
 ### 3-7. pfSense NAT 설정
-![로드밸런서 구조도](./images/nlb-architecture.png)
+<img width="1479" height="414" alt="image (2)" src="https://github.com/user-attachments/assets/9ad6595e-9ecb-47d3-b87f-c35ea9390602" />
 
 외부에서 들어오는 HTTPS(443) 요청을 로드밸런서 VM으로 전달하도록 NAT를 수정한다.
 
@@ -286,14 +287,15 @@ sudo tail -n 20 /var/log/nginx/access.log
 요청이 특정 서버에 몰리지 않고 균등하게 분산되는지 검증한다.
 
 #### 기대 결과
-![로드밸런서 구조도](./images/nlb-architecture.png)
+<img width="1919" height="1018" alt="image (3)" src="https://github.com/user-attachments/assets/7d75507e-b90b-4009-8ce1-f923f518b6cb" />
+
 - 사용자 입장에서는 동일한 웹 페이지에 접속하는 것처럼 보임
 - 실제 요청은 웹 서버 1, 2, 3으로 분산됨
 
 ## 5. 트러블슈팅
 ### 5-1. 502 Bad Gateway 발생
 #### 오류 내용
-![로드밸런서 구조도](./images/nlb-architecture.png)
+
 - 웹 서버 접속은 되지만 502 Bad Gateway 가 발생함
 - 아래 명령어로 오류 로그 확인 가능
 
