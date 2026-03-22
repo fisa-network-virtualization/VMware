@@ -4,6 +4,15 @@
 
 이더넷 프레임의 기본 MTU(1500 bytes)를 9000 bytes까지 확장하여 Storage / vMotion / FT 등 대용량 트래픽이 지속적으로 발생하는 네트워크 구간의 전송 효율과 성능을 향상시킨다.
 
+
+
+## 2. 구성도 / 개념
+
+### 구성 및 흐름
+
+<img width="1061" height="779" alt="image" src="https://github.com/user-attachments/assets/f61d49f6-acdd-43b0-899c-cc3dc00629fc" />
+
+
 ### 적용 대상 포트그룹
 
 | 포트그룹 | 이유 |
@@ -12,17 +21,13 @@
 | vMotion-PG | vMotion 시 수십 GB의 VM 메모리를 한 번에 복사해야 함 |
 | FT-PG | Primary <-> Secondary VM 간 상태를 실시간으로 동기화함 |
 
+
 ### 기대 효과
 
 - CPU 부하 감소 — 패킷을 잘게 쪼개고 재조립하는 횟수가 줄어 ESXi 호스트의 CPU 사용량이 감소
 - 전송 효율 향상 — 헤더 오버헤드 비율이 낮아지고 실제 데이터 비율이 높아져 처리량 증가
 
-## 2. 구성도 / 개념
-
-### 구성 및 흐름
-
-<img width="1061" height="779" alt="image" src="https://github.com/user-attachments/assets/f61d49f6-acdd-43b0-899c-cc3dc00629fc" />
-
+  
 ### 핵심 원칙
 
 End-to-End 설정 — 
