@@ -40,7 +40,7 @@
 - [로드밸런서 구성](./service/nlb/nlb.md)
 
 ### 운영 실습 / 미션
-- [계정 생성, Tag, Template](./mission/misison1/mission1.md)
+- [계정 생성, Tag, Template](./mission/mission1/mission1.md)
 - [vMotion, FT 테스트](./mission/mission2/mission2.md)
 - [vCenter 백업](./mission/mission3/mission3.md)
 
